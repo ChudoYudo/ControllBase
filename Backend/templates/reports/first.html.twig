@@ -1,0 +1,54 @@
+{# ./templates/default/mypdf.html.twig #}
+<!DOCTYPE html>
+<style>
+    td {
+        padding-left: 30px;
+    }
+</style>
+<html>
+<body>
+<table  style="border-collapse: collapse;" border="1px" width="100%" >
+    <tr>
+
+        <th>
+            Номер
+        </th>
+        <th>
+            Имя
+        </th>
+        <th>
+            Фамилия
+        </th>
+        <th>
+            Отчество
+        </th>
+    </tr>
+    {% for soldier in soldiers %}
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+                {{ soldier.getFirstName() }}
+            </td>
+            <td>
+                {{ soldier.getLastName() }}
+            </td>
+            <td>
+                {{ soldier.getThirdName() }}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+<table width="100%">
+    <tr>
+        <td width="50%">
+
+        </td>
+        <td align="left" width="50%">
+            Подпись:
+        </td>
+    </tr>
+</table>
+</html>
