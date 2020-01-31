@@ -5,14 +5,14 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import ExampleNav from "./components/nav";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import SoldierTable from "./components/soldierTable";
 
 import Stable from "./components/st";
 
+import ReportTable from "./components/tables/firstReportTable";
 
-
-import MaterialTable from "./components/MaterialTable";
+import MaterialTable from "./components/tables/MaterialTable";
 require('dotenv').config();
 
 
@@ -35,10 +35,17 @@ for(var i = 0; i < 25; i++) {
 function App() {
   return (
       <div>
-        {/*<Stable/>*/}
-        {/*<ExampleNav/>*/}
-        {/*<SoldierTable/>*/}
-        <MaterialTable/>
+          <BrowserRouter>
+              <div>
+                  <Switch>
+                      <Route path="/" component={MaterialTable} exact/>
+                      <Route path="/s" component={Stable}/>
+                      <Route path="/report" component={ReportTable}/>
+                      <Route component={Error}/>
+                  </Switch>
+              </div>
+          </BrowserRouter>
+        <ExampleNav/>
       </div>
   );
 }

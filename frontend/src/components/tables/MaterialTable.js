@@ -8,15 +8,15 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableFooter from '@material-ui/core/TableFooter'
 import TablePagination from '@material-ui/core/TablePagination';
-import CTableRow from "./tableR";
+import CTableRow from "../tableR";
 
 
 import axios from "axios";
-import SearchRow from "./searchRow";
+import SearchRow from "../searchRow";
 import qs from 'qs';
 import {Button} from "@material-ui/core";
 import {Label} from "@material-ui/icons";
-import NewSoldierModal from "./newSModal";
+import NewSoldierModal from "../newSModal";
 
 
 
